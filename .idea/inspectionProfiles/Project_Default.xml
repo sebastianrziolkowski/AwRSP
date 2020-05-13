@@ -19,6 +19,7 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="str.sum_grades" />
+          <option value="str.append" />
         </list>
       </option>
     </inspection_tool>
