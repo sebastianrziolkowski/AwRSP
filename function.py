@@ -143,9 +143,118 @@ def exercise_12(n):
     print("Add: " + str(sum(list_of_number)))
 
 
-def exercise_13(string, char):
+def exercise_13(string: str, char) -> int:
     result = 0
     for element in string:
         if element == char:
             result = result + 1
     return result
+
+
+def exercise_14(string: str) -> int:
+    result = 0
+    for element in string:
+        if string.count(element) == 1:
+            result += 1
+    return result
+
+
+def exercise_15(string_list: list) -> list:
+    shorterString = string_list[0]
+    longerString = string_list[0]
+    for element in string_list:
+        if len(element) > len(longerString):
+            longerString = element
+        if len(element) < len(shorterString):
+            shorterString = element
+    return [shorterString, longerString]
+
+
+def exercise_16(person_list: list, cars_list: list) -> dict:
+    if len(person_list) != len(cars_list):
+        return []
+    else:
+        return {person_list.pop(0): cars_list.pop(0) for i in range(len(cars_list))}
+
+
+def exercise_17(int_list: list) -> int:
+    result = 0
+    for element in int_list:
+        result += element
+    return result
+
+
+def exercise_18(int_list: list) -> float:
+    return exercise_17(int_list) / len(int_list)
+
+
+def exercise_19(*arguments: int) -> int:
+    result = 0
+    for number in arguments:
+        result += number
+    return result
+
+
+def exercise_20(phone_numbers: list) -> dict:
+    global contact
+    for number in phone_numbers:
+        name = input()
+        contact = {name: name}
+    return contact
+
+
+def exercise_21(dic: dict, numb: int):
+    for x in dic:
+        if dic[x] > numb:
+            print(x)
+
+
+# dictionary = {
+#    "szesc": 6,
+#    "piec": 5,
+#    "cztery": 4,
+#    "trzy": 3
+# }
+
+# exercise_21(dictionary, 4)
+
+def exercise_22(set_1: set, set_2: set):
+    for element in set_1:
+        if element in set_2:
+            print(element + " exist in set_2")
+
+
+def exercise_23(list_: list):
+    for element in list_:
+        print("Hello " + element)
+
+
+def exercise_24(list_1: list, list_2: list) -> dict:
+    return {list_1.pop(0): list_2.pop(0) for i in range(len(list_1))}
+
+
+def exercise_25(invoice_amounts: list, number: float) -> list:
+    list_ = []
+    for element in invoice_amounts:
+        if element > number:
+            list_.append(element)
+    return list_
+
+
+def exercise_26(*arguments: str) -> str:
+    result = arguments[0]
+    for string in arguments:
+        if len(string) > len(result):
+            result = string
+    return result
+
+
+def exercise_27(number_: int) -> bool:
+    res = [int(x) for x in str(number_)]
+    result = 0
+    for element in res:
+        result += element ** 3
+    if result == number_:
+        return True
+    else:
+        return False
